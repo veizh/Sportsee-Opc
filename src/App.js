@@ -139,20 +139,21 @@ function App() {
 
   useEffect(() => {
     setLoading(true)
-    let data = {};
-    fetch("http://localhost:3000/user/18")
-      .then((res) => res.json())
-      .then((userData) => Object.assign(data, { "userData": userData.data }));
-    fetch("http://localhost:3000/user/18/performance")
-      .then((res) => res.json())
-      .then((userData) => Object.assign(data, { "performance": userData.data }));
-    fetch("http://localhost:3000/user/18/activity")
-      .then((res) => res.json())
-      .then((userData) => Object.assign(data, { "activity": userData.data.sessions }));
-    fetch("http://localhost:3000/user/18/average-sessions")
-      .then((res) => res.json())
-      .then((userData) =>Object.assign(data, { "average": userData.data.sessions }));
-    setData(data);
+  //  let data = {};
+  //  fetch("http://localhost:3000/user/18")
+  //    .then((res) => res.json())
+  //    .then((userData) => Object.assign(data, { "userData": userData.data }));
+  //  fetch("http://localhost:3000/user/18/performance")
+  //    .then((res) => res.json())
+  //    .then((userData) => Object.assign(data, { "performance": userData.data }));
+  //  fetch("http://localhost:3000/user/18/activity")
+  //    .then((res) => res.json())
+  //    .then((userData) => Object.assign(data, { "activity": userData.data.sessions }));
+  //  fetch("http://localhost:3000/user/18/average-sessions")
+  //    .then((res) => res.json())
+  //    .then((userData) =>Object.assign(data, { "average": userData.data.sessions }));
+  //  setData(data);
+  setData(dataMock)
     setTimeout(() => {
     setLoading(false)
       
