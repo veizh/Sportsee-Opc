@@ -1,0 +1,243 @@
+@charset "UTF-8";
+.welcome {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 125px;
+}
+.welcome h1 {
+  text-align: left;
+  font-size: 40px;
+  font-weight: 500;
+  color: black;
+}
+.welcome h1 span {
+  font-size: 40px;
+  color: red;
+}
+.welcome p {
+  text-align: left;
+  font-size: 20px;
+}
+
+.left-part {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+}
+.left-part .activites-area {
+  border-radius: 8px;
+  width: 100%;
+  height: 55%;
+}
+.left-part .container-cards {
+  width: 100%;
+  display: flex;
+  height: 45%;
+  justify-content: space-between;
+}
+
+.right-part {
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.right-part .container-stat {
+  width: 100%;
+  height: 100px;
+  box-shadow: rgba(19, 20, 20, 0.1019607843) 1px 1px 6px 2px;
+  background-color: #FBFBFB;
+  display: flex;
+  border-radius: 10px;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  padding: 20px;
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+}
+.right-part .container-stat:hover {
+  transform: translateY(-5px);
+  background-color: #282D30;
+  color: white !important;
+}
+.right-part .container-stat:hover .name, .right-part .container-stat:hover .quantity {
+  color: whitesmoke;
+}
+.right-part .container-stat .icon-container {
+  height: 50px;
+  width: 50px;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: transform cubic-bezier(0.19, -0.01, 0.42, 2.2) 0.5s;
+}
+.right-part .container-stat .icon-container:hover {
+  transform: rotate(90deg) scale(1.07);
+  background-color: red !important;
+}
+.right-part .container-stat .icon-container:hover path {
+  fill: white !important;
+}
+.right-part .container-stat .icon-container:hover > svg {
+  transform: scale(1.17) rotate(-90deg);
+}
+.right-part .container-stat .icon-container svg {
+  position: absolute;
+  transition: all cubic-bezier(0.19, -0.01, 0.42, 2.2) 0.5s;
+  width: 30px;
+  height: 30px;
+}
+.right-part .container-stat .quantity {
+  text-align: left;
+  color: #282D30;
+  font-size: 20px;
+}
+.right-part .container-stat .name {
+  text-align: left;
+  color: #74798C;
+  font-size: 14px;
+}
+
+.tooltip {
+  background-color: red;
+  color: white;
+  font-size: 18px;
+  padding: 15px 20px;
+}
+.tooltip.duration {
+  background-color: white;
+  color: #282D30;
+}
+
+.container-card {
+  width: 32%;
+  height: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: rgba(19, 20, 20, 0.1019607843) 1px 1px 6px 2px;
+}
+.container-card.dayly {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.container-card.dayly .legend {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.container-card.dayly .stats {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  font-size: 15px;
+  font-weight: bolder;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+}
+.container-card.dayly .stats span {
+  font-size: 12.5px;
+  font-weight: 400;
+  opacity: 0.8;
+}
+.container-card.activities {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.container-card.activities .title {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #20253A;
+  font-size: 15px;
+}
+.container-card.activities .legends {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.container-card.activities .legends .stat {
+  position: relative;
+  font-size: 15px;
+  color: #a5a5a5;
+  display: flex;
+  align-items: center;
+}
+.container-card.activities .legends .stat.kilogram::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #282D30;
+  left: -25px;
+  border-radius: 50px;
+}
+.container-card.activities .legends .stat.kcal::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #E60000;
+  left: -25px;
+  border-radius: 50px;
+}
+.container-card.perf {
+  background-color: #282D30;
+  display: flex;
+  justify-content: center;
+}
+.container-card.perf tspan {
+  font-size: 12px !important;
+  color: whitesmoke !important;
+  fill: white;
+}
+.container-card.duration {
+  background-color: red;
+  padding: 10px 0 0 0;
+  position: relative;
+}
+.container-card.duration::before {
+  content: "Durée des sessions";
+  color: rgba(255, 255, 255, 0.7137254902);
+  font-size: 22px;
+  position: absolute;
+  width: 100px;
+  left: 20px;
+  top: 20px;
+  text-align: left;
+}
+.container-card.duration path {
+  stroke: rgba(255, 255, 255, 0.7137254902);
+}
+.container-card.duration .Xaxis line {
+  display: none;
+}
+.container-card.duration tspan {
+  fill: rgba(255, 255, 255, 0.7137254902);
+  font-size: 15px;
+}
+
+.display-area {
+  width: 100%;
+  height: calc(100% - 125px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}/*# sourceMappingURL=home.css.map */
